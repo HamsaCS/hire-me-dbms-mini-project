@@ -1,9 +1,10 @@
 import yaml
+import os
 
 
 class Theme:
     def __init__(self, name='default'):
-        with open(f'tkinter_uix/themes/{name}.yaml', 'r') as file:
+        with open(os.getcwd()+f'\\tkinter_uix\\themes\\{name}.yaml','r') as file:
             self.theme = yaml.load(file, Loader=yaml.FullLoader)
 
         self.app_color = self.theme['App']
